@@ -11,7 +11,7 @@ export default function Book(props) {
   return (
     <TouchableOpacity onPress={handlePress}>
       <View>
-        <Text style={styles.container}>{book.title}</Text>
+        <Text style={styles.container}>{props.book.title}</Text>
       </View>
     </TouchableOpacity>
   );
