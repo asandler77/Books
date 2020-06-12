@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, FlatList, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, Button} from 'react-native';
+import Homepage from './src/homePage';
 import Books from './src/Books';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-export default function App({navigation}) {
-  const [books, setBooks] = useState([
-    {title: 'Quiet Don', id: 1},
-    {title: 'War and peace', id: 2},
-    {title: 'Borodino', id: 3},
-  ]);
+const Stack = createStackNavigator();
 
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.content}>Books</Text>
-      <Books books={books} />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRoutName="Home">
+        <Stack.Screen name="Home" component={Homepage} />
+        <Stack.Screen name="Books" component={Books} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

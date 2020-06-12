@@ -1,12 +1,19 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import Books from './Books';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+
 export default function Book(props) {
-  const {book} = props;
+  const handlePress = () => {
+    props.onPress(props.book.id);
+  };
+  const {book} = props.book;
+  console.log(props.book.title)
+
   return (
-    <View>
-      <Text style={styles.container}>{book.title}</Text>
-    </View>
+    <TouchableOpacity onPress={handlePress}>
+      <View>
+        <Text style={styles.container}>{book.title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -16,4 +23,4 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 5,
   },
-})
+});
