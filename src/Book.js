@@ -1,19 +1,11 @@
 import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
-export default function Book(props) {
-  const handlePress = () => {
-    props.onPress(props.book.id);
-  };
-  const {book} = props.book;
-  console.log(props.book.title)
-
+export default function Book({route, navigation}) {
   return (
-    <TouchableOpacity onPress={handlePress}>
       <View>
-        <Text style={styles.container}>{props.book.title}</Text>
+        <Text style={styles.container}>{route.params.title}</Text>
       </View>
-    </TouchableOpacity>
   );
 }
 

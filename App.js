@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
 import Homepage from './src/homePage';
 import Books from './src/Books';
+import Book from './src/Book';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -13,6 +14,7 @@ export default function App() {
       <Stack.Navigator initialRoutName="Home">
         <Stack.Screen name="Home" component={Homepage} />
         <Stack.Screen name="Books" component={Books} />
+        <Stack.Screen name="Book" component={Book} />
       </Stack.Navigator>
     </NavigationContainer>
   );

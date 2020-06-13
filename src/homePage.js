@@ -4,8 +4,6 @@ import Navigator from '../routes/homeStack';
 import Books from '../src/Books';
 
 export default function Homepage({navigation}) {
-
-
   return (
     <View>
       <Text>Home Page</Text>
