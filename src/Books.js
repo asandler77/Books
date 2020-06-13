@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {TouchableOpacity, View, Text, FlatList} from 'react-native';
+import {TouchableOpacity, View, Text, FlatList, StyleSheet} from 'react-native';
 import Book from './Book';
 
 export default function Books({navigation}) {
@@ -16,7 +16,6 @@ export default function Books({navigation}) {
 
   return (
     <View>
-      <Text>Books</Text>
       <FlatList
         data={books}
         keyExtractor={item => item.id}
@@ -25,10 +24,21 @@ export default function Books({navigation}) {
             onPress={() => {
               navigation.navigate('Book', item);
             }}>
-            <Text>{item.title}</Text>
+            <Text style={styles.content}>{item.title}</Text>
           </TouchableOpacity>
         )}
       />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  content: {
+    fontSize: 20,
+    backgroundColor: '#ddd',
+    margin: 16,
+    padding: 16,
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+})

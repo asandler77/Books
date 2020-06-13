@@ -11,7 +11,7 @@ export default function Book({route, navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    fontSize: 40,
+    fontSize: 20,
     margin: 10,
     padding: 5,
   },
