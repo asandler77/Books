@@ -6,14 +6,10 @@ import Books from '../src/Books';
 export default function Homepage({navigation}) {
   return (
     <View>
-      {/*<Button*/}
-      {/*  title="Go to Books"*/}
-      {/*  onPress={() => navigation.navigate('Books')}*/}
-      {/*/>*/}
       <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Books');
-          }}>
+        onPress={() => {
+          navigation.navigate('Books');
+        }}>
         <Text style={styles.content}>To the book list</Text>
       </TouchableOpacity>
     </View>
@@ -29,8 +25,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     borderWidth: 1,
     borderRadius: 10,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
 })
 
