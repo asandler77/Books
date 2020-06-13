@@ -18,7 +18,7 @@ export default function Books({navigation}) {
     <View>
       <FlatList
         data={books}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id.toString()}
         renderItem={({item}) => (
           <TouchableOpacity
             onPress={() => {
